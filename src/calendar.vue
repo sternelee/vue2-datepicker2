@@ -152,15 +152,16 @@ export default {
   },
   data () {
     const now = this.getNow(this.value)
-    const calendarYear = this.startAtYear || now.getFullYear()
-    const calendarMonth = this.startAtMonth || now.getMonth()
+    const calendarYear = now.getFullYear()
+    const calendarMonth = now.getMonth()
     const firstYear = Math.floor(calendarYear / 10) * 10
     return {
       panel: 'NONE',
       dates: [],
       calendarMonth,
       calendarYear,
-      firstYear
+      firstYear,
+      isStartAt: false
     }
   },
   computed: {
@@ -170,8 +171,8 @@ export default {
       },
       set (val) {
         const now = new Date(val)
-        this.calendarYear = this.startAtYear || now.getFullYear()
-        this.calendarMonth = this.startAtMonth || now.getMonth()
+        this.calendarYear = !this.isStartAt && this.startAtYear ? this.startAtYear : now.getFullYear()
+        this.calendarMonth = !this.isStartAt && this.startAtMonth ? this.startAtMonth : now.getMonth()
       }
     },
     timeType () {
@@ -359,9 +360,11 @@ export default {
       this.$emit('select-time', time, true)
     },
     changeCalendarYear (year) {
+      this.isStartAt = true
       this.updateNow(new Date(year, this.calendarMonth))
     },
     changeCalendarMonth (month) {
+      this.isStartAt = true
       this.updateNow(new Date(this.calendarYear, month))
     },
     getSibling () {

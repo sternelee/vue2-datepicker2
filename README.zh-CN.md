@@ -1,6 +1,12 @@
-# vue2-datepicker
+# vue2-datepicker2
+
+基于 [vue2-datepicker](https://github.com/mengxiong10/vue2-datepicker) 修改的版本
+
+[x] 添加 `rangeColumn` 配置多月份的选项
 
 [English Version](https://github.com/mengxiong10/vue2-datepicker/blob/master/README.md)
+
+# vue2-datepicker
 
 > 一个基于Vue2.x的日期时间选择组件
 
