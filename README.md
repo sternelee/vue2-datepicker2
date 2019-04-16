@@ -1,14 +1,14 @@
 # vue2-datepicker
 
-[中文版](https://github.com/mengxiong10/vue2-datepicker/blob/master/README.zh-CN.md)
+[中文版](https://github.com/sternelee/vue2-datepicker2/blob/master/README.zh-CN.md)
 
 > A Datepicker Component For Vue2
 
-<a href="https://travis-ci.org/mengxiong10/vue2-datepicker">
-  <img src="https://travis-ci.org/mengxiong10/vue2-datepicker.svg?branch=master" alt="build:passed">
+<a href="https://travis-ci.org/sternelee/vue2-datepicker2">
+  <img src="https://travis-ci.org/sternelee/vue2-datepicker2.svg?branch=master" alt="build:passed">
 </a>
-<a href="https://coveralls.io/github/mengxiong10/vue2-datepicker">
-  <img src="https://coveralls.io/repos/github/mengxiong10/vue2-datepicker/badge.svg?branch=master&service=github" alt="Badge">
+<a href="https://coveralls.io/github/sternelee/vue2-datepicker2">
+  <img src="https://coveralls.io/repos/github/sternelee/vue2-datepicker2/badge.svg?branch=master&service=github" alt="Badge">
 </a>
 <a href="https://www.npmjs.com/package/vue2-datepicker">
   <img src="https://img.shields.io/npm/v/vue2-datepicker.svg" alt="npm">
@@ -20,7 +20,7 @@
 ## Demo
 <https://mengxiong10.github.io/vue2-datepicker/demo/index.html>
 
-![image](https://github.com/mengxiong10/vue2-datepicker/raw/master/screenshot/demo.PNG)
+![image](https://github.com/sternelee/vue2-datepicker2/raw/master/screenshot/demo.PNG)
 
 ## Install
 
@@ -85,7 +85,7 @@ export default {
 |------|--------------|-------|---------|
 | type | select date type  | 'date' \| 'datetime' \| 'year' \| 'month' \| 'time' | 'date' |
 | range | if true, the type is daterange or datetimerange | `boolean` | false |
-| format | format the Date. The parsing tokens are similar to the moment.js | [token](https://github.com/taylorhakes/fecha#formatting-tokens) \| [`object`](https://github.com/mengxiong10/vue2-datepicker/issues/232#issuecomment-458558141) | 'YYYY-MM-DD' |  
+| format | format the Date. The parsing tokens are similar to the moment.js | [token](https://github.com/taylorhakes/fecha#formatting-tokens) \| [`object`](https://github.com/sternelee/vue2-datepicker2/issues/232#issuecomment-458558141) | 'YYYY-MM-DD' |  
 | value-type | type of binding value. If not specified, the binding value will be a Date object | [value-type](#value-type) | 'date' |
 | lang | Translation | [lang](#lang) | 'zh' |
 | clearable | if false, don't show the clear icon | `boolean` | true |
@@ -189,6 +189,6 @@ custom time-picker
 
 ## License
 
-[MIT](https://github.com/mengxiong10/vue2-datepicker/blob/master/LICENSE)
+[MIT](https://github.com/sternelee/vue2-datepicker2/blob/master/LICENSE)
 
 Copyright (c) 2017-present xiemengxiong

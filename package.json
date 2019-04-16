@@ -1,5 +1,5 @@
 {
-  "name": "vue2-datepicker",
+  "name": "@xunlei/vue2-datepicker2",
   "description": "A Datepicker Component For Vue2",
   "main": "lib/index.js",
   "files": [
@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mengxiong10/vue2-datepicker.git"
+    "url": "git+https://github.com/sternelee/vue2-datepicker2.git"
   },
   "keywords": [
     "vue",
@@ -28,9 +28,9 @@
   "author": "xiemengxiong",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mengxiong10/vue2-datepicker/issues"
+    "url": "https://github.com/sternelee/vue2-datepicker2/issues"
   },
-  "homepage": "https://github.com/mengxiong10/vue2-datepicker#readme",
+  "homepage": "https://github.com/sternelee/vue2-datepicker2#readme",
   "dependencies": {
     "fecha": "^2.3.3"
   },

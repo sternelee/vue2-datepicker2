@@ -4,17 +4,17 @@
 
 [x] 添加 `rangeColumn` 配置多月份的选项
 
-[English Version](https://github.com/mengxiong10/vue2-datepicker/blob/master/README.md)
+[English Version](https://github.com/sternelee/vue2-datepicker2/blob/master/README.md)
 
 # vue2-datepicker
 
 > 一个基于Vue2.x的日期时间选择组件
 
-<a href="https://travis-ci.org/mengxiong10/vue2-datepicker">
-  <img src="https://travis-ci.org/mengxiong10/vue2-datepicker.svg?branch=master" alt="build:passed">
+<a href="https://travis-ci.org/sternelee/vue2-datepicker2">
+  <img src="https://travis-ci.org/sternelee/vue2-datepicker2.svg?branch=master" alt="build:passed">
 </a>
-<a href="https://coveralls.io/github/mengxiong10/vue2-datepicker">
-  <img src="https://coveralls.io/repos/github/mengxiong10/vue2-datepicker/badge.svg?branch=master&service=github" alt="Badge">
+<a href="https://coveralls.io/github/sternelee/vue2-datepicker2">
+  <img src="https://coveralls.io/repos/github/sternelee/vue2-datepicker2/badge.svg?branch=master&service=github" alt="Badge">
 </a>
 <a href="https://www.npmjs.com/package/vue2-datepicker">
   <img src="https://img.shields.io/npm/v/vue2-datepicker.svg" alt="npm">
@@ -26,7 +26,7 @@
 ## 线上Demo
 <https://mengxiong10.github.io/vue2-datepicker/demo/index.html>
 
-![image](https://github.com/mengxiong10/vue2-datepicker/raw/master/screenshot/demo.PNG)
+![image](https://github.com/sternelee/vue2-datepicker2/raw/master/screenshot/demo.PNG)
 
 ## 安装
 
@@ -91,7 +91,7 @@ export default {
 |------|--------------|-------|---------|
 | type | 选择日期类型  | 'date' \| 'datetime' \| 'year' \| 'month' \| 'time' | 'date' |
 | range | 如果是true, 显示日历范围选择  | `boolean` | false |
-| format | 格式化显示日期, 值类似moment.js | [token](https://github.com/taylorhakes/fecha#formatting-tokens) \| [`object`](https://github.com/mengxiong10/vue2-datepicker/issues/232#issuecomment-458558141) | 'YYYY-MM-DD'  |  
+| format | 格式化显示日期, 值类似moment.js | [token](https://github.com/taylorhakes/fecha#formatting-tokens) \| [`object`](https://github.com/sternelee/vue2-datepicker2/issues/232#issuecomment-458558141) | 'YYYY-MM-DD'  |  
 | value-type | 设置绑定值的格式, 默认返回日期对象 | [value-type](#value-type) | 'date' |
 | lang | 选择语言或自定义 | [lang](#lang) | 'zh' |
 | clearable | 如果设置false, 不显示清除图标 | `boolean` | true |
@@ -194,6 +194,6 @@ export default {
 
 ## 许可证
 
-[MIT](https://github.com/mengxiong10/vue2-datepicker/blob/master/LICENSE)
+[MIT](https://github.com/sternelee/vue2-datepicker2/blob/master/LICENSE)
 
 Copyright (c) 2017-present xiemengxiong

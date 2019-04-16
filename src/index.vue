@@ -218,10 +218,10 @@ export default {
     rangeVals.forEach((v, k) => {
       const _month = nowMonth + k
       if (_month > 12) {
-        rangeMonths.push(_month - 12)
+        rangeMonths.push(_month - 12 - 1)
         rangeYears.push(nowYear + 1)
       } else {
-        rangeMonths.push(_month)
+        rangeMonths.push(_month - 1)
         rangeYears.push(nowYear)
       }
     })
@@ -462,7 +462,6 @@ export default {
       this.updateDate() && this.closePopup()
     },
     selectStartDate (date, n) {
-      console.log(n ,date)
       this.$set(this.rangeVals, n, date)
       const idx = this.isRangeVal ? 1 : 0
       this.$set(this.currentValue, idx, date)
