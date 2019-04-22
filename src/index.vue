@@ -88,19 +88,23 @@
           :date-format="innerDateFormat"
           :value="rangeVals[k]"
           :end-at="currentValue[1]"
-          :start-at="null"
+          :start-at="currentValue[0]"
           :startAtMonth="rangeMonths[k]"
           :startAtYear="rangeYears[k]"
           :visible="popupVisible"
+          :showNavDate="k !== 1"
           @select-date="v => selectStartDate(v, k)"
           @select-time="v => selectStartTime(v, k)"></calendar-panel>
       </div>
-      <slot name="footer" :confirm="confirmDate">
+      <slot name="footer" :confirm="confirmDate" :cancel="cancelDate">
         <div class="mx-datepicker-footer"
           v-if="confirm">
           <button type="button"
             class="mx-datepicker-btn mx-datepicker-btn-confirm"
             @click="confirmDate">{{ confirmText }}</button>
+          <button type="button"
+            class="mx-datepicker-btn mx-datepicker-btn-confirm"
+            @click="cancelDate">{{ cancelText }}</button>
         </div>
       </slot>
     </div>
@@ -171,6 +175,10 @@ export default {
       type: String,
       default: 'OK'
     },
+    cancelText: {
+      type: String,
+      default: 'Cancel'
+    },
     confirm: {
       type: Boolean,
       default: true
@@ -189,7 +197,7 @@ export default {
     },
     shortcuts: {
       type: [Boolean, Array],
-      default: true
+      default: false
     },
     inputName: {
       type: String,
@@ -430,6 +438,9 @@ export default {
       this.emitDate('confirm')
       this.closePopup()
     },
+    cancelDate () {
+      this.closePopup()
+    },
     updateDate (confirm = false) {
       if ((this.confirm && !confirm) || this.disabled) {
         return false
@@ -466,7 +477,7 @@ export default {
       const idx = this.isRangeVal ? 1 : 0
       this.$set(this.currentValue, idx, date)
       this.isRangeVal += 1
-      if (this.isRangeVal === 2) {
+      if (this.isRangeVal > 1) {
         this.updateDate()
       }
     },

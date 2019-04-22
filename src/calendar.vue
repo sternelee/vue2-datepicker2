@@ -3,19 +3,19 @@
     :class="'mx-calendar-panel-' + panel.toLowerCase()">
     <div class="mx-calendar-header">
       <a
-        v-show="panel !== 'TIME'"
+        v-show="showNavDate && panel !== 'TIME'"
         class="mx-icon-last-year"
         @click="handleIconYear(-1)">&#171;</a>
       <a
-        v-show="panel === 'DATE'"
+        v-show="showNavDate && panel === 'DATE'"
         class="mx-icon-last-month"
         @click="handleIconMonth(-1)">&#8249;</a>
       <a
-        v-show="panel !== 'TIME'"
+        v-show="showNavDate && panel !== 'TIME'"
         class="mx-icon-next-year"
         @click="handleIconYear(1)">&#187;</a>
       <a
-        v-show="panel === 'DATE'"
+        v-show="showNavDate && panel === 'DATE'"
         class="mx-icon-next-month"
         @click="handleIconMonth(1)">&#8250;</a>
       <a
@@ -148,6 +148,10 @@ export default {
       default () {
         return null
       }
+    },
+    showNavDate: {
+      type: Boolean,
+      default: true
     }
   },
   data () {

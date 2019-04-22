@@ -92,14 +92,19 @@ export default {
         classes.push('disabled')
       }
 
-      if (curTime) {
+      if (curTime || endTime) {
         if (cellTime === curTime) {
           classes.push('actived')
-        } else if (startTime && cellTime <= curTime) {
+        } else if (startTime && cellTime >= startTime) {
           classes.push('inrange')
-        } else if (endTime && cellTime >= curTime) {
+        } else if (endTime && cellTime <= endTime) {
           classes.push('inrange')
         }
+        // else if (startTime && cellTime <= curTime) {
+        //   classes.push('inrange')
+        // } else if (endTime && cellTime >= curTime) {
+        //   classes.push('inrange')
+        // }
       }
       return classes
     },

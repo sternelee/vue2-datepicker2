@@ -1,8 +1,15 @@
+# vue2-datepicker2
+
+基于 [vue2-datepicker](https://github.com/mengxiong10/vue2-datepicker) 修改的版本
+
+[x] 添加 `rangeColumn` 配置多月份的选项,默认为三列
+[x] 添加 `showNavDate` 来控制是否显示上一年，下一年，上一个月，下一个月的操作
+
+[English Version](https://github.com/sternelee/vue2-datepicker2/blob/master/README.md)
+
 # vue2-datepicker
 
-[中文版](https://github.com/sternelee/vue2-datepicker2/blob/master/README.zh-CN.md)
-
-> A Datepicker Component For Vue2
+> 一个基于Vue2.x的日期时间选择组件
 
 <a href="https://travis-ci.org/sternelee/vue2-datepicker2">
   <img src="https://travis-ci.org/sternelee/vue2-datepicker2.svg?branch=master" alt="build:passed">
@@ -17,18 +24,18 @@
   <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT">
 </a>
 
-## Demo
+## 线上Demo
 <https://mengxiong10.github.io/vue2-datepicker/demo/index.html>
 
 ![image](https://github.com/sternelee/vue2-datepicker2/raw/master/screenshot/demo.PNG)
 
-## Install
+## 安装
 
 ```bash
 $ npm install vue2-datepicker --save
 ```
 
-## Usage
+## 用法
 
 ```html
 <script>
@@ -79,115 +86,114 @@ export default {
   </div>
 </template>
 ```
-### Props
+### 属性
 
-| Prop | Description  | Type  | Default |
+| 属性 | 描述  | 类型  | 默认值 |
 |------|--------------|-------|---------|
-| type | select date type  | 'date' \| 'datetime' \| 'year' \| 'month' \| 'time' | 'date' |
-| range | if true, the type is daterange or datetimerange | `boolean` | false |
-| format | format the Date. The parsing tokens are similar to the moment.js | [token](https://github.com/taylorhakes/fecha#formatting-tokens) \| [`object`](https://github.com/sternelee/vue2-datepicker2/issues/232#issuecomment-458558141) | 'YYYY-MM-DD' |  
-| value-type | type of binding value. If not specified, the binding value will be a Date object | [value-type](#value-type) | 'date' |
-| lang | Translation | [lang](#lang) | 'zh' |
-| clearable | if false, don't show the clear icon | `boolean` | true |
-| confirm | if true, need click the button to change the value | `boolean` | false |
-| editable | if false, user cann't type it | `boolean` | true |
-| disabled | Disable the component | `boolean` | false |
-| placeholder | input placeholder text | `string` | — |
-| width  | input size  | `string`\|`number` | 210 |
-| append-to-body | append the popup to body | `boolean` | false |
-| default-value | default date of the calendar | `Date` | new Date() |
-| popupStyle | popup style(override the top, left style) | `object` | — |
-| not-before | Disable all dates before new Date(not-before) | `string`\|`Date` | ''|
-| not-after | Disable all dates after new Date(not-after) | `string`\|`Date`| '' |
-| disabled-days | Disable Days | `(date) => boolean` | - |
-| shortcuts | the shortcuts for the range picker | [shortcuts](#shortcuts) | true |
-| time-picker-options | custom time-picker | [time-picker-options](#time-picker-options) | null |           
-| minute-step | if > 0 don't show the second picker | 0 - 60 | 0 |
-| first-day-of-week | set the first day of week | 1 - 7  | 7 |
-| input-class | the input class name | `string` | 'mx-input' |
-| input-attr | the input attr(eg: { required: true, id: 'input'}) | `object` | — |
-| confirm-text | the default text to display on confirm button | `string` | 'OK' |
-| range-separator | the range separator text | `string` | '~' |
-| date-format | format the time header and tooltip | `string` | '' |
+| type | 选择日期类型  | 'date' \| 'datetime' \| 'year' \| 'month' \| 'time' | 'date' |
+| range | 如果是true, 显示日历范围选择  | `boolean` | false |
+| format | 格式化显示日期, 值类似moment.js | [token](https://github.com/taylorhakes/fecha#formatting-tokens) \| [`object`](https://github.com/sternelee/vue2-datepicker2/issues/232#issuecomment-458558141) | 'YYYY-MM-DD'  |  
+| value-type | 设置绑定值的格式, 默认返回日期对象 | [value-type](#value-type) | 'date' |
+| lang | 选择语言或自定义 | [lang](#lang) | 'zh' |
+| clearable | 如果设置false, 不显示清除图标 | `boolean` | true |
+| confirm | 如果是true， 显示确认按钮且需要确认才更新时间 | `boolean` | false |
+| editable | 如果是false, 用户不能手动输入更新日期 | `boolean` | true |
+| disabled | 禁用组件 | `boolean` | false |
+| placeholder | 输入框placeholder | `string` | — |
+| width  | 设置宽度  | `string`\|`number` | 210 |
+| append-to-body | 弹出层元素插入body下面 | `boolean` | false |
+| default-value | 日历的默认值 | `Date` | new Date() |
+| popupStyle | 弹出层的样式(可以覆盖left,top样式) | `object` | — |
+| not-before | 禁止选择这个时间之前的时间 | `string`\|`Date` | ''|
+| not-after | 禁止选择这个时间之前=后的时间 | `string`\|`Date`| '' |
+| disabled-days | 自定义禁止的日期 | `(date) => boolean` | - |
+| shortcuts | 自定义范围选择的时候快捷选项 | [shortcuts](#shortcuts) | true |
+| time-picker-options | 自定义时间选择的开始，结束，步进 | [time-picker-options](#time-picker-options) | null |           
+| minute-step | 设置分钟的步进， 设置大于0不显示秒的选择(0-60) | 0 - 60 | 0 |
+| first-day-of-week | 设置日历星期几开头 | 1 - 7  | 7 |
+| input-class | 自定义input元素的类名 | `string` | 'mx-input' |
+| input-attr | 自定义input元素的属性(eg: { required: true, id: 'input'}) | `object` | — |
+| confirm-text | 确认按钮的名称 | `string` | 'OK' |
+| range-separator | range 分隔符 | `string` | '~' |
+| date-format | 格式化时间组件头部和日历的tooltip,默认是format字段去除时间的格式化  | `string` | '' |
 
 #### value-type
-set the format of binding value
+设置绑定值的格式
 
-| Value           | Description                               |
+| 可选值           | 描述                               |
 |-----------------|-------------------------------------------|     
-| date            | binding value will be a Date object       |
-| timestamp       | binding value will be a timestamp number  |
-| format          | binding value will be the format string   |
+| date            | 返回的绑定值是Date对象       |
+| timestamp       | 返回的绑定值是时间戳数字  |
+| format          | 返回的绑定值是通过`format`属性格式化的值   |
 
-Advanced: You can also customize objects to implement two functions.
+高级: 也可以传入一个自定义实现包含2个函数的对象
 ```js
 {
-  value2date: (value: any) => Date,  // transform the binding value to calendar Date Object
-  date2value: (date: Date) => any   // transform the calendar Date Object to binding value
+  value2date: (value: any) => Date,  // 转化绑定值到日历时间对象
+  date2value: (date: Date) => any   // 转化日历时间对象到绑定值
 }
 
 ```
 #### lang
 
-| Type |
+| 可选值 |
 |------|
 | 'en'\|'zh'\|'es'\|'pt-br'\|'fr'\|'ru'\|'de'\|'it'\|'cs' |
 | { days: string[]; months: string[]; picker: string[]; placeholder: { date: string; dateRange: string  } } |
 
 #### shortcuts
-the shortcuts for the range picker
 
-| Value           | Description |
+| 可选值           | 描述 |
 |-----------------|-------------|     
-| true            | show the default shortcuts |
-| false           | hide the defaualt shortcuts  |
-| [{text: string, onClick: () => any }] | custom shortcuts |
+| true            | 显示默认快捷选择 |
+| false           | 隐藏默认快捷选择  |
+| [{text: string, onClick: () => any }] | 自定义快捷选择 |
 
 #### time-picker-options
-custom time-picker
+自定义时间选择
 
-| Type |
+| 可选值 |
 |------|
 | {start: '00:00', step:'00:30' , end: '23:30'} |
 | () => Array<{ label: string; values: { hours: number; minutes: number } }> |
 
-### Events
-| Name            | Description                                            |  Callback Arguments    |
-|-----------------|--------------------------------------------------------|------------------------|
-| input           | When the value change(v-model event)                   | the currentValue       |
-| change          | When the value change(same as input)                   | the currentValue       |
-| confirm         | When click 'confirm' button                            | the currentValue       |
-| clear           | When click 'clear' button                              |                        |
-| input-error     | When user type a invalid Date                          | the input text         |
-| panel-change    | When change the panel view(eg: from year to month view)| [panel](#panel), [oldPanel](#panel) |
-| calendar-change | When calendar view year or month change                | now(Date), oldNow(Date)|
-| focus           | When input focus                                       |                        |
-| blur            | When input blur                                        |                        |
+### 事件
+| Name            | 说明                          |  回调参数       
+|-----------------|----------------------------- |----------------
+| change          | 日期改变的时候触发              | 选择的日期            
+| input           | 日期改变的时候触发              | 选择的日期             
+| confirm         | 点击确认按钮触发的事件           | 选择的日期 
+| clear           | 清空时候触发                    |          
+| input-error     | 当用户输入的值无效时候触发       | 用户输入的字符串         
+| panel-change    | 切换面板时触发                 | [panel](#panel), [oldPanel](#panel)      
+| calendar-change | 日历的年或月改变时触发           | 当前日历时间，过去日历时间
+| focus           | 当输入框获得焦点                |
+| blur            | 当输入框失去焦点                |
 
 #### panel
 
-| Value | Description          |
+| 值    | 描述          |
 |-------|----------------------|     
-| NONE  | when panel is closed |
-| DATE  | when panel is date   |
-| YEAR  | when panel is year   |
-| MONTH | when panel is month  |
-| TIME  | when panel is time   |
+| NONE  | 当面板关闭时的值 |
+| DATE  | 当面板是日期选择时的值   |
+| YEAR  | 当面板是年选择时的值   |
+| MONTH | 当面板是月选择时的值  |
+| TIME  | 当面板是时间选择时的值   |
 
 ### Slots
 
-| Name            | Description              |
+| 名称            | 描述                      |
 |-----------------|--------------------------|     
-| calendar-icon   | custom the calender icon |
-| header          | popup header             |
-| footer          | popup footer             |
+| calendar-icon   | 图标自定义                |
+| header          | 日历头部自定义            |
+| footer          | 日历尾部自定义            |
 
-## ChangeLog 
+## 日志 
 
 [CHANGELOG](CHANGELOG.md)
 
 
-## License
+## 许可证
 
 [MIT](https://github.com/sternelee/vue2-datepicker2/blob/master/LICENSE)
 
