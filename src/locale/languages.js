@@ -6,7 +6,9 @@ export default {
     'placeholder': {
       'date': '请选择日期',
       'dateRange': '请选择日期范围'
-    }
+    },
+    'ok': '确定',
+    'cancel': '取消'
   },
   'en': {
     'days': ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],

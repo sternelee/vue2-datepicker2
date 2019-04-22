@@ -171,14 +171,6 @@ export default {
       type: [String, Number],
       default: null
     },
-    confirmText: {
-      type: String,
-      default: 'OK'
-    },
-    cancelText: {
-      type: String,
-      default: 'Cancel'
-    },
     confirm: {
       type: Boolean,
       default: true
@@ -364,6 +356,12 @@ export default {
     },
     innerPopupStyle () {
       return { ...this.position, ...this.popupStyle }
+    },
+    confirmText () {
+      return this.t('ok') || 'ok'
+    },
+    cancelText () {
+      return this.t('cancel') || 'cancel'
     }
   },
   mounted () {

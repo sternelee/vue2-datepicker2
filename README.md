@@ -4,6 +4,8 @@
 
 [x] 添加 `rangeColumn` 配置多月份的选项,默认为三列
 [x] 添加 `showNavDate` 来控制是否显示上一年，下一年，上一个月，下一个月的操作
+[x] 让中间的时间响应选择的区间
+[x] 增加取消按钮
 
 [English Version](https://github.com/sternelee/vue2-datepicker2/blob/master/README.md)
 
